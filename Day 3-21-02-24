@@ -1,0 +1,163 @@
+#p21
+'''approach-1
+n=int(input())
+l=list(map(int,input().split()))[:n]
+for i in range(n):
+    if l[i] in l[i+1:]:
+        print(l[i])
+        
+  '''
+'''approach 2
+n=int(input())
+l=list(map(int,input().split()))
+l.sort()
+for i in range(n):
+    if l[i] ==l[i+1]:
+        print(l[i])
+        break
+'''
+'''approach-3
+n=int(input())
+l=list(map(int,input().split()))
+for i in l:
+    c=l.count(i)
+    if c>1:
+        print(i)
+        break
+        '''
+#p22
+'''approach 1
+n=int(input())
+l=list(map(int,input().split ()))
+unique=[ ] 
+for i in range(n):
+    if l.count(l[i])==1:
+        if l[i] in unique:
+            continue
+        else:
+            unique.append(l[i])
+for i in unique:
+    print (i,end=" ")
+'''
+'''approach 2
+n=int(input())
+l=list(map(int,input().split()))[:n]
+for i in l:
+    if l.count(i)==1:
+        print(i,end=" ")
+'''
+#p23
+''''approach 1
+t=int(input())
+for i in range (t):
+    n=int(input())
+    first=0
+    second=0
+    for i in range (1,n+1):
+        if n%i==0:
+            if i%2==0:
+                first=first+1
+            else:
+                second=second+1
+    if first==second:
+        print(1)
+    else:
+        print(0)
+'''
+'''
+t=int(input())
+for i in range(t):
+    n=int(input())
+    factors=[]
+    for j in range (1,n+1):
+        if n%j==0:
+            factors.append(j)
+        ef=[]
+        of=[]
+        for j in factors:
+            if j%2==0:
+                ef.append(j)
+            else:
+                of.append(j)
+    print(ef)
+    print(of)
+    if len(ef)==len(of):
+        print(1)
+    else:
+        print(0)
+    
+'''
+'''approach 3
+def factor(f):
+    first=0
+    second=0
+    for i in range(1,f+1):
+        if f%i==0:
+            if i%2==0:
+                first= first+1
+            else:
+                second=second+1
+    if first==second:
+        print(1)
+    else:
+        print(0)
+def test(t):
+    while t>0:
+        f=int(input())
+        factor(f)
+        test(t-1)
+t=int(input())
+test(t)
+
+        '''
+#p24
+'''
+t=int(input())
+for i in range(t):
+    n,x=map(int,input().split())
+    f=list(map(int,input().split()))
+    s=list(map(int,input().split()))
+    C=0
+    for j in range(n):
+           if f[j]>=x:
+               C=C+s[j]
+    print(C)
+           '''
+#p25
+'''
+t=int(input())
+for i in range (t):
+    n=list(map(int,input().split()))
+    count=[]
+    for j in range(2,n+1):
+        if n%j==0:
+            count.append(j)
+    if len(count)==2:
+        print("prime")
+    else:
+        print("not")
+'''
+#p26
+'''
+n=int(input())
+A=list(map(int,input().split()))
+B=list(map(int,input().split()))
+D=0
+for i in range(n):
+    if A[i]<=2*B[i]  and 2*A[i]>=B[i]:
+        D=D+1
+print(D)
+'''
+
+#p27
+'''
+n=int(input())
+s=0
+for j in range(2,n+1,2):
+    for i in range(1,j):
+        if j%i==0:
+            s=s+i
+    if s==j:
+        print(s)
+    s=0
+'''
